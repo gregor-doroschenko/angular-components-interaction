@@ -7,6 +7,7 @@ import { StartComponent } from './start/start.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardModule } from 'primeng/card';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     BrowserModule,
     BrowserAnimationsModule,
     CardModule,
+    InputTextModule,
     AppRoutingModule
   ],
   providers: [],
