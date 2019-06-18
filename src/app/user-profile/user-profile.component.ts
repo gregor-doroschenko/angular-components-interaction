@@ -9,7 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  @Input() name: string;
+  private _name: string = '';
+
+  @Input()
+  set name(name: string) {
+    this._name = (name && name.toUpperCase()) || null;
+  }
+
+  get name(): string {
+    return this._name;
+  }
 
   constructor() { }
 
