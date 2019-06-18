@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
+  userStatus: string;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -1,6 +1,7 @@
 // user-profile.component.ts
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Status } from '../interfaces/status.interface';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,6 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+
+  status: Status[] = [
+    { name: 'working' },
+    { name: 'vacation' },
+    { name: 'remote' },
+    { name: 'superhero' }
+  ];
+
+  selectedStatus: Status = this.status[0];
 
   private _name: string = '';
 
@@ -20,8 +30,14 @@ export class UserProfileComponent implements OnInit {
     return this._name;
   }
 
+  @Output() changeStatusEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() { }
+
+  changeStatus(selected: Status) {
+    this.changeStatusEvent.emit(selected.name);
+  }
 
 }
