@@ -9,9 +9,10 @@
     <strong>Position:</strong> Software Developer
   </p>
   <p>
-    <strong>Status:</strong><br>
+    <strong>I am:</strong><br>
     <p-dropdown [options]="status"
                 [(ngModel)]="selectedStatus"
-                optionLabel="name" (ngModelChange)="changeStatus($event)"></p-dropdown>
+                optionLabel="name"
+                (ngModelChange)="changeStatus($event)"></p-dropdown>
   </p>
 </p-card>

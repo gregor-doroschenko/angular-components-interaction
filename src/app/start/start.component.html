@@ -22,12 +22,12 @@
         </div>
       </form>
     </div>
-    <h2>User Selected Status</h2>
-    <p>{{ userStatus ? userStatus : 'no status' }}</p>
+    <h2>User Selected Status: <span></span></h2>
+    <p>User is {{ userStatus ? userStatus : 'not seleceted status' }}!</p>
   </div>
   <div class="col">
-    <!-- template of parent component -->
     <h2>Preview:</h2>
-    <app-user-profile name="Gregor Doroschenko" (changeStatusEvent)="userStatus = $event"></app-user-profile>
+    <app-user-profile name="Gregor Doroschenko"
+                      (changeStatusEvent)="userStatus = $event"></app-user-profile>
   </div>
 </div>

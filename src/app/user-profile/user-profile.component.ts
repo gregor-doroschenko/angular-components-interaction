@@ -10,8 +10,8 @@ export class UserProfileComponent {
 
   status: Status[] = [
     { name: 'working' },
-    { name: 'vacation' },
-    { name: 'remote' },
+    { name: 'on vacation' },
+    { name: 'remotee' },
     { name: 'superhero' }
   ];
 
