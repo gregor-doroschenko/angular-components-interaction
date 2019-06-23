@@ -1,6 +1,6 @@
 // user-profile.component.ts
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Status } from '../interfaces/status.interface';
 
 @Component({
@@ -19,7 +19,7 @@ export class UserProfileComponent implements OnInit {
 
   selectedStatus: Status = this.status[0];
 
-  private _name: string = '';
+  private _name: string;
 
   @Input()
   set name(name: string) {
