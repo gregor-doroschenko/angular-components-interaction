@@ -1,6 +1,4 @@
-// user-profile.component.ts
-
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Status } from '../interfaces/status.interface';
 
 @Component({
@@ -8,7 +6,7 @@ import { Status } from '../interfaces/status.interface';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent {
 
   status: Status[] = [
     { name: 'working' },
@@ -31,10 +29,6 @@ export class UserProfileComponent implements OnInit {
   }
 
   @Output() changeStatusEvent = new EventEmitter<string>();
-
-  constructor() { }
-
-  ngOnInit() { }
 
   changeStatus(selected: Status) {
     this.changeStatusEvent.emit(selected.name);
