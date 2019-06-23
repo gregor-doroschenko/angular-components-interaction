@@ -22,11 +22,14 @@ export class UserProfileComponent {
   @Input()
   set name(name: string) {
     this._name = (name && name.toUpperCase()) || null;
+    this.nameChange.emit(name);
   }
 
   get name(): string {
     return this._name;
   }
+
+  @Output() nameChange = new EventEmitter<string>();
 
   @Output() changeStatusEvent = new EventEmitter<string>();
 

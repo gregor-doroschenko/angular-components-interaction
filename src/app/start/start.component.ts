@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class StartComponent {
 
+  name = 'Gregor Doroschenko';
   userStatus: string;
 
 }
