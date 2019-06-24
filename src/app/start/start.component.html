@@ -24,10 +24,16 @@
     </div>
     <h2>User Selected Status: <span></span></h2>
     <p>User is {{ userStatus ? userStatus : 'not seleceted status' }}!</p>
+    <div class="buttons-wrapper">
+      <button pButton type="button"
+              (click)="userProfile.changeStatus({name: 'modiefied from outside'})"
+              label="Test: Change status"></button>
+    </div>
   </div>
   <div class="col">
     <h2>Preview:</h2>
     <app-user-profile [(name)]="name"
-                      (changeStatusEvent)="userStatus = $event"></app-user-profile>
+                      (changeStatusEvent)="userStatus = $event"
+                      #userProfile></app-user-profile>
   </div>
 </div>
