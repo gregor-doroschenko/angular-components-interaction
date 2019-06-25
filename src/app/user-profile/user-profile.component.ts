@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Status } from '../interfaces/status.interface';
+import { CommunicationService } from '../services/communication.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -33,8 +34,14 @@ export class UserProfileComponent {
 
   @Output() changeStatusEvent = new EventEmitter<string>();
 
+  constructor(private communicationService: CommunicationService) {}
+
   changeStatus(selected: Status) {
     this.changeStatusEvent.emit(selected.name);
+  }
+
+  sendMessage() {
+    this.communicationService.sendMessage('Here is message from child component over communication service!');
   }
 
 }

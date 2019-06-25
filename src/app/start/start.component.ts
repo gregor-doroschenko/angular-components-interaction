@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { CommunicationService } from '../services/communication.service';
 
 @Component({
   selector: 'app-start',
@@ -10,9 +11,14 @@ export class StartComponent implements AfterViewInit {
 
   name = 'Gregor Doroschenko';
   userStatus: string;
+  serviceMessage: string;
 
   @ViewChild('userProfile', { static: true })
   userProfile: UserProfileComponent;
+
+  constructor(private communicationService: CommunicationService) {
+    this.communicationService.listener.subscribe(value => this.serviceMessage = value);
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
